@@ -1,0 +1,25 @@
+main .container {
+  padding-top: 52px;
+}
+
+main .dashboard {
+  display: flex;
+  padding: 0 10rem;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(100vh - 324px);
+  padding-top: 26px;
+}
+
+main .dashboard .left {
+  height: 150px;
+  width: 150px;
+  background-color: #654afe;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: xxx-large;
+}
+

@@ -33,12 +33,18 @@
             //Set page on loading if video is not loaded 
 
             let video = document.getElementById('banner');
-            video.addEventListener('loadeddata' , (e) => {
-                if(video.readyState === 4){
+            if(video != null){
+                video.addEventListener('loadeddata' , (e) => {
+                    if(video.readyState === 4){
+                    document.querySelector('.loading').classList.add('hide');
+                    document.querySelector('.ready').classList.remove('hide');
+                    }
+                })
+            }
+            else{
                 document.querySelector('.loading').classList.add('hide');
                 document.querySelector('.ready').classList.remove('hide');
-                }
-            })
+            }
         </script>
     </body>
 </html>

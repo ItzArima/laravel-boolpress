@@ -5,6 +5,10 @@
     font-family: Nunito , sans-serif;
 }
 
+main{
+    min-height: calc(100vh - 324px);
+}
+
 header{
     width: 100%;
     position: fixed;
@@ -38,6 +42,60 @@ header{
 
                 li{
                     list-style-type: none;
+                }
+            }
+
+            .authenticated{
+                position: relative;
+
+                .dropdown{
+                    position: absolute;
+                    top: 20px;
+                    left: -1rem;
+                    opacity: 0;
+                    transition:all 0.3s;
+                    overflow: hidden;
+                    background-color: #654afe;
+                    padding: 1rem;
+
+                    .dropdown-item{
+                        margin-bottom: 0.5rem;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .nav-link{
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    text-transform: uppercase;
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                        
+
+                    span{
+
+                        .rotate{
+                            transform: rotate(180deg);
+                        }
+
+                        i{
+                            width: 15px;
+                            margin-left: 5px;
+                            color: white;
+                            transition: all 0.3s;
+                        }
+                    }
+
+                }
+
+                .display{
+                    height: auto;
+                    opacity: 1;
                 }
             }
         }

@@ -5,6 +5,10 @@
   font-family: Nunito, sans-serif;
 }
 
+main {
+  min-height: calc(100vh - 324px);
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -39,6 +43,55 @@ header .header-container .right nav {
 
 header .header-container .right nav li {
   list-style-type: none;
+}
+
+header .header-container .right .authenticated {
+  position: relative;
+}
+
+header .header-container .right .authenticated .dropdown {
+  position: absolute;
+  top: 20px;
+  left: -1rem;
+  opacity: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+  background-color: #654afe;
+  padding: 1rem;
+}
+
+header .header-container .right .authenticated .dropdown .dropdown-item {
+  margin-bottom: 0.5rem;
+}
+
+header .header-container .right .authenticated .dropdown .dropdown-item:hover {
+  text-decoration: underline;
+}
+
+header .header-container .right .authenticated .nav-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+header .header-container .right .authenticated .nav-link span .rotate {
+  transform: rotate(180deg);
+}
+
+header .header-container .right .authenticated .nav-link span i {
+  width: 15px;
+  margin-left: 5px;
+  color: white;
+  transition: all 0.3s;
+}
+
+header .header-container .right .authenticated .display {
+  height: auto;
+  opacity: 1;
 }
 
 header .header-container a {

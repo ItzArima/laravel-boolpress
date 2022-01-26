@@ -26,25 +26,42 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="authenticated">
+                        <p id="navbarDropdown" class="nav-link dropdown-toggle">
+                            {{ Auth::user()->name }} <span><i class="fas fa-chevron-down"></i></span>
+                        </p>
+                        <div class="dropdown">
+                            <a class="dropdown-item" href="{{route('user.dashboard')}}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </div>
-                    </li>
+                       </div>
+                    </div>
                 @endguest
             </nav>
         </div>
     </div>
 </header>
+
+<script>
+    let element = document.getElementById('navbarDropdown');
+    let chevron = document.querySelector('.fa-chevron-down');
+    let dropdown = document.querySelector('.dropdown');
+    if(element != null){
+        element.addEventListener('click' , function(){
+            if(dropdown.classList.contains('display')){
+                dropdown.classList.remove('display');
+                chevron.classList.remove('rotate');
+            }
+            else{
+                dropdown.classList.add('display');
+                chevron.classList.add('rotate');
+            }
+        })
+    }
+</script>
