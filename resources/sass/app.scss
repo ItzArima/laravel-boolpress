@@ -8,7 +8,7 @@
 header{
     width: 100%;
     position: fixed;
-    background-color: #1483ed;
+    background-color: #654afe;
     color: white;
     z-index: 99;
 
@@ -16,7 +16,7 @@ header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.25rem 5rem;
+        padding: 0.25rem 10rem;
 
         .center{
             
@@ -45,6 +45,61 @@ header{
         a{
             color: white;
             text-decoration: none;
+        }
+    }
+}
+
+footer{
+
+    .footer-container{
+        padding: 1.5rem 10rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e4e4e4;
+
+        .footer-links{
+
+            h1{
+                margin-bottom: 1rem;
+            }
+
+            ul{
+                
+                li{
+                    list-style-type: none;
+                    padding: 0.5rem 0;
+
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .contacts{
+            
+            a{
+                color: #654afe;
+                text-decoration: none;
+                margin: 0 0.5rem;
+            }
+        }
+    }
+
+    .footer-bottom{
+        display: flex;
+        color: black;
+        padding: 0.25rem 10rem;
+        background-color: #e4e4e4;
+        justify-content: space-between;
+
+        a{
+            text-decoration: none;
+            font-weight: 600;
+            color: red;
         }
     }
 }
