@@ -31,7 +31,7 @@
                             {{ Auth::user()->name }} <span><i class="fas fa-chevron-down"></i></span>
                         </p>
                         <div class="dropdown">
-                            <a class="dropdown-item" href="{{route('user.dashboard')}}">Dashboard</a>
+                            <a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
