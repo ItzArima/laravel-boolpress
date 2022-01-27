@@ -1,0 +1,115 @@
+main{
+
+    .products-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: calc(52px + 1.5rem);
+
+        a{
+            width: calc(25% - 2rem);
+            margin: 0 1rem;
+            margin-bottom: 2rem;
+            color: black;
+            text-decoration: none;
+            
+            .product{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+    
+                img{
+                    width: 100%;
+                }
+    
+                .product-info{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    flex-grow: 1;
+    
+                    h4{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .show-container{
+        padding: 0 10rem;
+        padding-top: calc(52px + 1.5rem);
+        display: flex;
+
+        .right{
+            padding-left: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .bottom{
+                display: flex;
+                justify-content: space-between;
+
+                .price , .aviability{
+                    display: flex;
+
+                    p{
+                        margin-left: 1rem;
+                    }
+                }
+
+                .aviability{
+
+                    p{
+                        color: red;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .admin-dashboard{
+        padding: calc(52px + 1.5rem) 10rem 1.5rem 10rem;
+        
+        .row{
+            display: flex;
+            border-bottom: 1px solid black;
+
+            .id{
+                width: 4rem;
+                border-left: 1px solid black;
+            }
+
+            .col{
+                width: calc(25% - 1rem);
+            }
+
+            &>div{
+                border-right: 1px solid black;
+                padding-left: 5px;
+                display: flex;
+                align-items: center;
+            }
+
+            &>div:last-of-type{
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+
+        .row:first-of-type{
+            border-top: 1px solid black;
+
+            &>div{
+                display: flex;
+                justify-content: center;
+                padding: 0;
+            }
+        }
+    }
+}

@@ -6,22 +6,72 @@ main{
 
     .dashboard{
         display: flex;
-        padding: 0 10rem;
-        justify-content: space-evenly;
         align-items: center;
         min-height: calc(100vh - 324px);
         padding-top: 26px;
 
-        .left{
-            height: 150px;
-            width: 150px;
-            background-color: #654afe;
-            border-radius: 50%;
+        .sidebar{
+            width: 25%;
+
+            .categories{
+                display: flex;
+                flex-direction: column;
+                padding-left: 2rem;
+                
+                .category{
+                    cursor: pointer;
+                    
+                    .title{
+                        display: flex;
+                        align-items: center;
+
+                        i{
+                            transition: all 0.5s;
+                        }
+                    }
+
+                    .actions{
+                        display: flex;
+                        flex-direction: column;
+                        height: 0;
+                        overflow: hidden;
+                        transition: all 0.5s;
+
+                        a{
+                            color: black;
+                            font-weight: 600;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .active{
+                        height: 50px;
+                    }
+
+                    .rotate{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        .container{
+            width: 75%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: xxx-large;
+            justify-content: space-evenly;
+            padding: 0 10rem;
+            
+            .left{
+                height: 150px;
+                width: 150px;
+                background-color: #654afe;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: xxx-large;
+            }
         }
     }
 }

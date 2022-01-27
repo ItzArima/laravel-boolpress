@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,6 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     Route::resource('products', ProductController::class);
 });
 
-Route::resource('products', ProductController::class)->only([
+Route::resource('/products', ProductController::class)->only([
     'index','show'
 ]);

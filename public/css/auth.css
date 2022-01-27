@@ -4,14 +4,64 @@ main .container {
 
 main .dashboard {
   display: flex;
-  padding: 0 10rem;
-  justify-content: space-evenly;
   align-items: center;
   min-height: calc(100vh - 324px);
   padding-top: 26px;
 }
 
-main .dashboard .left {
+main .dashboard .sidebar {
+  width: 25%;
+}
+
+main .dashboard .sidebar .categories {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+main .dashboard .sidebar .categories .category {
+  cursor: pointer;
+}
+
+main .dashboard .sidebar .categories .category .title {
+  display: flex;
+  align-items: center;
+}
+
+main .dashboard .sidebar .categories .category .title i {
+  transition: all 0.5s;
+}
+
+main .dashboard .sidebar .categories .category .actions {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+main .dashboard .sidebar .categories .category .actions a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+main .dashboard .sidebar .categories .category .active {
+  height: 50px;
+}
+
+main .dashboard .sidebar .categories .category .rotate {
+  transform: rotate(180deg);
+}
+
+main .dashboard .container {
+  width: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10rem;
+}
+
+main .dashboard .container .left {
   height: 150px;
   width: 150px;
   background-color: #654afe;
