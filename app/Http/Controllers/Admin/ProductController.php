@@ -46,9 +46,7 @@ class ProductController extends Controller
             'description' => 'nullable'
         ]);
 
-        // Salva
         Product::create($validated);
-        // redirect
         return redirect()->route('admin.products.index');
     }
 
@@ -71,7 +69,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit' , compact('product'));
     }
 
     /**
@@ -83,7 +81,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $data=$request->all();
+        $product->update($data);
+        return redirect()->route('admin.products.index')->with(session()->flash('success' , 'product edited succesfully'));
     }
 
     /**

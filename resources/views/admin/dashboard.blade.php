@@ -20,7 +20,7 @@
                         </div>
                         <div class="actions">
                             <a href="{{route('admin.products.index')}}">Manage Products</a>
-                            <a href="">Add a Product</a>
+                            <a href="{{route('admin.products.create')}}">Add a Product</a>
                         </div>
                     </div>
                 </div>

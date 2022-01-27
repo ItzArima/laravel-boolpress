@@ -99,6 +99,30 @@ main{
             &>div:last-of-type{
                 display: flex;
                 justify-content: space-evenly;
+                font-size: large;
+
+                a{
+                    text-decoration: none;
+                    color: green;
+                    font-weight: 600;
+                }
+
+                a:first-of-type{
+                    color: #654afe;
+                }
+
+                input{
+                    background-color: transparent;
+                    color: red;
+                    font-weight: 600;
+                    border: 0;
+                    font-size: large;
+                    cursor: pointer;
+                }
+
+                a:hover , input:hover{
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -109,6 +133,39 @@ main{
                 display: flex;
                 justify-content: center;
                 padding: 0;
+            }
+        }
+    }
+
+    .forms{
+        padding: calc(52px + 1.5rem) 10rem 1.5rem 10rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        form{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            input , textarea{
+                padding: 0.5rem 1rem;
+                margin: 1rem 0;
+            }
+
+            input:last-of-type{
+                border: 2px solid #654afe;
+                border-radius: 5px;
+                color: #654afe;
+                font-weight: 600;
+                background: transparent;
+                transition: all 0.3s;
+                cursor: pointer;
+
+                &:hover{
+                    color: white;
+                    background-color: #654afe;
+                }
             }
         }
     }
