@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    Route::resource('products', ProductController::class);
 });
+
+Route::resource('products', ProductController::class)->only([
+    'index','show'
+]);

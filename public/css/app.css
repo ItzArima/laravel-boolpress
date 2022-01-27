@@ -24,11 +24,21 @@ header .header-container {
   padding: 0.25rem 10rem;
 }
 
+header .header-container .center {
+  flex-grow: 1;
+}
+
 header .header-container .center nav {
   display: flex;
 }
 
-header .header-container .center nav li {
+header .header-container .center nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+header .header-container .center nav ul li {
   list-style-type: none;
 }
 

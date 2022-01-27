@@ -23,12 +23,19 @@ header{
         padding: 0.25rem 10rem;
 
         .center{
+            flex-grow: 1;
             
             nav{
                 display: flex;
 
-                li{
-                    list-style-type: none;
+                ul{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 100%;
+
+                    li{
+                        list-style-type: none;
+                    }
                 }
             }
         }
@@ -39,7 +46,7 @@ header{
             nav{
                 display: flex;
                 justify-content: space-between;
-
+                
                 li{
                     list-style-type: none;
                 }
