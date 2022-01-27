@@ -148,7 +148,9 @@ main .forms form {
 }
 
 main .forms form input,
-main .forms form textarea {
+main .forms form textarea,
+main .forms form select,
+main .forms form option {
   padding: 0.5rem 1rem;
   margin: 1rem 0;
 }

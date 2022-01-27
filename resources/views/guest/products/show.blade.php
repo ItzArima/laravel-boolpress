@@ -12,6 +12,7 @@
             <div class="right">
                 <div class="top">
                     <h1>{{$product->name}}</h1>
+                    <h3>Category: {{$product->category ? $product->category->name : 'uncategorized'}}</h3>
                     <p>{{$product->description}}</p>
                 </div>
                 <div class="bottom">

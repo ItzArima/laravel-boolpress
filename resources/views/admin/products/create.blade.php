@@ -16,6 +16,12 @@
                 <textarea name="description" rows="10" placeholder="Product Description" required></textarea>
                 <input type="number" step="0.01" name="price" placeholder="Product Price" required>
                 <input type="number" name="qty" placeholder="Product Quantity">
+                <select name="category_id" id="category_id">
+                    <option selected disabled>Select a Category</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
                 <input type="submit" value="Create Product">
             </form>
         </div>

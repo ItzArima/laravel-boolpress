@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+        return view('admin.products.create' , compact('categories'));
     }
 
     /**
@@ -69,7 +71,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit' , compact('product'));
+        $categories = Category::all();
+        return view('admin.products.edit' , compact('product' , 'categories'));
     }
 
     /**
@@ -81,8 +84,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $data=$request->all();
-        $product->update($data);
+        $validate = $request->validate([
+            'category_id' => 'nullable|exists:categories,id',
+            'name' => 'required',
+            'image' => 'required',
+            'price' => 'required',
+            'description' => 'required'
+        ]);
+        $product->update($validate);
         return redirect()->route('admin.products.index')->with(session()->flash('success' , 'product edited succesfully'));
     }
 

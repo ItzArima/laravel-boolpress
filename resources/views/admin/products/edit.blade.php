@@ -17,6 +17,12 @@
             <textarea name="description" rows="10" required>{{$product->description}}</textarea>
             <input type="number" step="0.01" name="price" value="{{$product->price}}" required>
             <input type="number" name="qty" value="{{$product->qty}}">
+            <select name="category_id" id="category_id">
+                <option selected disabled>Select a Category</option>
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}" {{$category->id == old('category' , $product->category->id) ? 'selected' : ''}}>{{$category->name}}</option>
+                @endforeach
+            </select>
             <input type="submit" value="Edit Product">
         </form>
     </div>
