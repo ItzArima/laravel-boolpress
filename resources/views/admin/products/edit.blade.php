@@ -20,7 +20,7 @@
             <select name="category_id" id="category_id">
                 <option selected disabled>Select a Category</option>
                 @foreach($categories as $category)
-                    <option value="{{$category->id}}" {{$category->id == old('category' , $product->category->id) ? 'selected' : ''}}>{{$category->name}}</option>
+                    <option value="{{$category->id}}" {{$category->id == old('category' , $product->category_id) ? 'selected' : ''}}>{{$category->name}}</option>
                 @endforeach
             </select>
             <input type="submit" value="Edit Product">
