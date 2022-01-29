@@ -45,7 +45,8 @@ class ProductController extends Controller
             'image' => 'nullable',
             'qty' => 'nullable',
             'price' => 'nullable',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
 
         Product::create($validated);

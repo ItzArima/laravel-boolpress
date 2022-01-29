@@ -12,6 +12,8 @@ main{
 
         .sidebar{
             width: 25%;
+            align-self: flex-start;
+            padding-top: calc(52px + 1rem);
 
             .categories{
                 display: flex;

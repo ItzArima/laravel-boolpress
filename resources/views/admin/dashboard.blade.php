@@ -13,7 +13,7 @@
         <div class="dashboard">
             <div class="sidebar">
                 <div class="categories">
-                <div class="category">
+                    <div class="category">
                         <div class="title">
                             <h1>Products</h1>
                             <i class="fas fa-chevron-down chev"></i>
@@ -21,6 +21,36 @@
                         <div class="actions">
                             <a href="{{route('admin.products.index')}}">Manage Products</a>
                             <a href="{{route('admin.products.create')}}">Add a Product</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>Posts</h1>
+                            <i class="fas fa-chevron-down chev"></i>
+                        </div>
+                        <div class="actions">
+                            <a href="{{route('admin.posts.index')}}">Manage Posts</a>
+                            <a href="{{route('admin.posts.create')}}">Add a Post</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>Categories</h1>
+                            <i class="fas fa-chevron-down chev"></i>
+                        </div>
+                        <div class="actions">
+                            <a href="{{route('admin.categories.index')}}">Manage Categories</a>
+                            <a href="{{route('admin.categories.create')}}">Add a Category</a>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>Tags</h1>
+                            <i class="fas fa-chevron-down chev"></i>
+                        </div>
+                        <div class="actions">
+                            <a href="{{route('admin.tags.index')}}">Manage Tags</a>
+                            <a href="{{route('admin.tags.create')}}">Add a Tag</a>
                         </div>
                     </div>
                 </div>
@@ -88,6 +118,8 @@
             }
         }
     }
-    show();
-    setAvatar();
+    window.onload = () =>{
+        show();
+        setAvatar();
+    }
 </script>

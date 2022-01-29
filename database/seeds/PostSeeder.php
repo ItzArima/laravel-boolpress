@@ -17,7 +17,7 @@ class PostSeeder extends Seeder
             $post = new Post();
             $post->title = $faker->sentence();
             $post->image = $faker->imageUrl(600, 400, 'posts');
-            $post->body = $faker->realTextBetween($minNbChars = 160, $maxNbChars = 300, $indexSize = 2);
+            $post->body = $faker->realTextBetween($minNbChars = 300, $maxNbChars = 1000, $indexSize = 2);
             $post->save();
         }
     }

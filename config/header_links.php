@@ -8,5 +8,9 @@ return [
     [
         'name' => 'PRODUCTS',
         'href' => 'products.index',
+    ],
+    [
+        'name' => 'BLOG',
+        'href' => 'posts.index',
     ]
 ];
