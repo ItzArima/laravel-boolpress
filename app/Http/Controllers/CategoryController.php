@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('giest.category.index' , compact('categories'));
+        return view('guest.categories.index' , compact('categories'));
     }
 
     /**
@@ -29,6 +29,6 @@ class CategoryController extends Controller
         $posts = $category->posts;
         $products = $category->products;
 
-        return view('guest.categories.show' , compact('posts' , 'categories'));
+        return view('guest.categories.show' , compact('posts' , 'products' , 'category'));
     }
 }

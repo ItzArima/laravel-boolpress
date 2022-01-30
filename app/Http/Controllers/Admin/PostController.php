@@ -91,7 +91,6 @@ class PostController extends Controller
         ]);
 
         $post->update($validate);
-
         return redirect()->route('admin.posts.index')->with(session()->flash('success' , 'post edited succesfully'));
     }
 

@@ -21,7 +21,7 @@
                 @endforeach
             </div>
             <div class="category">
-                <h4>Category: {{$post->category ? '$post->category->name' : 'Uncategorized'}}</h4>
+                <h4>Category: <a href="{{$post->category ? route('categories.show' , $post->category->id) : '#'}}" style="{{$post->category ? '' : 'pointer-events: none; color: black;'}}">{{$post->category ? $post->category->name : 'Uncategorized'}}</a></h4>
             </div>
             <div class="post-body">
                 <p>{{$post->body}}</p>

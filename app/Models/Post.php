@@ -11,7 +11,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
-        'image'
+        'image',
+        'category_id'
     ];
 
     public function category(): BelongsTo{

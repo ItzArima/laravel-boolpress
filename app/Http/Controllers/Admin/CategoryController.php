@@ -57,7 +57,10 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('guest.categories.show' , compact('category'));
+        $posts = $category->posts;
+        $products = $category->products;
+
+        return view('guest.categories.show' , compact('posts' , 'products' , 'category'));
     }
 
     /**
