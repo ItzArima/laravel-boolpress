@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -28,7 +31,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.blog.create' , compact('categories'));
+        $tags = Tag::all();
+        return view('admin.blog.create' , compact('categories' , 'tags'));
     }
 
     /**
@@ -43,10 +47,12 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required',
             'image' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'tags' => 'exists:tags,id'
         ]);
-
-        Post::create($validate);
+        $validate['user_id'] = $userId;
+        $post = Post::create($validate);
+        $post->tags()->attach($request->tags);
 
         return redirect()->route('admin.posts.index')->with(session()->flash('success' , 'post created succesfully'));
     }
@@ -70,8 +76,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $tags = Tag::all();
         $categories = Category::all();
-        return view('admin.blog.edit' , compact('categories' , 'post'));
+        return view('admin.blog.edit' , compact('categories' , 'tags' , 'post'));
     }
 
     /**
@@ -83,15 +90,23 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $validate = $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'image' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
-        ]);
-
-        $post->update($validate);
-        return redirect()->route('admin.posts.index')->with(session()->flash('success' , 'post edited succesfully'));
+        if($post->user_id != Auth::user()->id){
+            return redirect()->route('admin.posts.index')->with(session()->flash('error' , 'access to post denied'));
+        }
+        else{
+            $validate = $request->validate([
+                'title' => 'required',
+                'body' => 'required',
+                'image' => 'required',
+                'category_id' => 'nullable|exists:categories,id',
+                'tags' => 'exists:tags,id'
+            ]);
+            $userId = Auth::user()->id;
+            $validate['user_id'] = $userId;
+            $post->update($validate);
+                $post->tags()->sync($request->tags);
+            return redirect()->route('admin.posts.index')->with(session()->flash('success' , 'post edited succesfully'));
+        }
     }
 
     /**
@@ -102,6 +117,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        DB::table('post_tag')->where('post_id' , $post->id)->delete();
         $post->delete();
         return redirect()->route('admin.posts.index')->with(session()->flash('success' , 'post deleted succesfully'));
     }

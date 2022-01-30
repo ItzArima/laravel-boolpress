@@ -18,6 +18,12 @@
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
+            <fieldset name="tags[]">
+                @foreach($tags as $tag)
+                    <input type="checkbox" value="{{$tag->id}}" name="tags[]">
+                    <span>{{$tag->name}}</span>
+                @endforeach
+            </fieldset>
             <input type="submit" value="Edit">
         </form>
     </div>
