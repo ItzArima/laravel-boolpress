@@ -49979,21 +49979,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/tags.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/tags.scss ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ./resources/sass/products.scss ./resources/sass/posts.scss ./resources/sass/tags.scss ./resources/sass/categories.scss ./resources/sass/home.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ./resources/sass/products.scss ./resources/sass/posts.scss ./resources/sass/categories.scss ./resources/sass/home.scss ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50002,7 +49991,6 @@ __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\auth.scss */"./resources/sass/auth.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\products.scss */"./resources/sass/products.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\posts.scss */"./resources/sass/posts.scss");
-__webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\tags.scss */"./resources/sass/tags.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\categories.scss */"./resources/sass/categories.scss");
 module.exports = __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\home.scss */"./resources/sass/home.scss");
 

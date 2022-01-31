@@ -6,7 +6,7 @@
 @section('content')
 <main>
     <div class="category-container">
-        <h1>{{$category->name}}</h1>
+        <div class="title"></div>
         <div class="posts">
             <h1>Related Posts</h1>
             <div class="related-posts-container">
@@ -16,7 +16,7 @@
                             <div class="post">
                                 <h1>{{$post->title}}</h1>
                                 <div class="image">
-                                    <img src="{{$post->image}}" alt="">
+                                    <img src="{{asset('storage/' . $post->image)}}" alt="">
                                 </div>
                                 <div class="date">
                                     <p>{{date('F d Y' , strtotime($post->created_at))}}</p>

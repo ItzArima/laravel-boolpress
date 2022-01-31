@@ -82,11 +82,23 @@ main .posts-container a .post {
   border-bottom: 2px solid black;
 }
 
+main .posts-container a .post .left {
+  width: 30%;
+}
+
+main .posts-container a .post .left img {
+  width: 100%;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 main .posts-container a .post .right {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0 2rem;
+  width: 70%;
 }
 
 main .posts-container a .post .right .title {
@@ -157,8 +169,8 @@ main .post-show-container .image img {
 main .post-show-container .image .title {
   position: absolute;
   bottom: 0%;
-  -webkit-backdrop-filter: blur(5px) brightness(1.5);
-          backdrop-filter: blur(5px) brightness(1.5);
+  -webkit-backdrop-filter: blur(5px) brightness(0.7);
+          backdrop-filter: blur(5px) brightness(0.7);
   padding: 0.5rem 1rem;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;

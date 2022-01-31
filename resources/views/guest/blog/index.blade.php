@@ -10,7 +10,7 @@
             <a href="{{route('posts.show' , $post->id)}}">
                 <div class="post">
                     <div class="left">
-                        <img src="{{$post->image}}" alt="">
+                        <img src="{{asset('storage/' . $post->image)}}" alt="">
                     </div>
                     <div class="right">
                         <div class="title">

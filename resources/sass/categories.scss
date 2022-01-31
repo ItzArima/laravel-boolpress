@@ -146,4 +146,38 @@ main{
             }
         }
     }
+
+    .category-container{
+        display: flex;
+        flex-direction: column;
+
+        .title{
+            align-self: center;
+        }
+
+        .posts{
+
+            .related-posts-container , .related-products-container{
+                display: flex;
+
+                a{
+                    width: calc(25% - 2rem);
+                    margin: 1rem;
+                    overflow: hidden;
+
+                    .post , .product{
+
+                        .image{
+
+                            img{
+                                width: 100%;
+                                height: 30vh;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

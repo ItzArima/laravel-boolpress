@@ -9,6 +9,7 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -19,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('user_id' , Auth::user()->id)->get();
         return view('admin.blog.index' , compact('posts'));
     }
 
@@ -47,11 +48,13 @@ class PostController extends Controller
         $validate = $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'image' => 'required',
+            'image' => ['image' , 'max:2000'],
             'category_id' => 'nullable|exists:categories,id',
             'tags' => 'exists:tags,id'
         ]);
         $validate['user_id'] = $userId;
+        $image_path = Storage::put('post_images' , $request->file('image'));
+        $validate['image'] = $image_path;
         $post = Post::create($validate);
         $post->tags()->attach($request->tags);
 

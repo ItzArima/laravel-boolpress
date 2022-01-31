@@ -7,11 +7,11 @@
 <main>
     <div class="edit-container forms">
         <h1>Edit The Post</h1>
-        <form action="{{route('admin.posts.update' , $post->id)}}" method="POST">
+        <form action="{{route('admin.posts.update' , $post->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <input type="text" name="title" value="{{$post->title}}" required>
-            <input type="text" name="image" value="{{$post->image}}" required>
+            <input type="file" name="image" value="{{$post->image}}" accept="images/*" required>
             <textarea name="body" id="body" rows="10">{{$post->body}}</textarea>
             <select name="category_id" id="category_id">
                 <option disabled {{$post->category_id == null ? 'selected' : ''}}>Select the category</option>

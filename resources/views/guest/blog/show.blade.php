@@ -7,7 +7,7 @@
 <main>
     <div class="post-show-container">
         <div class="image">
-            <img src="{{$post->image}}" alt="">
+            <img src="{{asset('storage/' . $post->image)}}" alt="">
             <div class="title">
                 <h1>{{$post->title}}</h1>
             </div>
@@ -16,7 +16,7 @@
             <div class="tags">
                 @foreach($post->tags as $tag)
                     <div class="tag">
-                        <h4>{{$tag->name}}</h4>
+                        <a href="{{route('tags.show' , $tag->id)}}"><h4>{{$tag->name}}</h4></a>
                     </div>
                 @endforeach
             </div>

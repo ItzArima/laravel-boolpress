@@ -151,3 +151,34 @@ main .forms form input:last-of-type:hover {
   background-color: #654afe;
 }
 
+main .category-container {
+  display: flex;
+  flex-direction: column;
+}
+
+main .category-container .title {
+  align-self: center;
+}
+
+main .category-container .posts .related-posts-container,
+main .category-container .posts .related-products-container {
+  display: flex;
+}
+
+main .category-container .posts .related-posts-container a,
+main .category-container .posts .related-products-container a {
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  overflow: hidden;
+}
+
+main .category-container .posts .related-posts-container a .post .image img,
+main .category-container .posts .related-posts-container a .product .image img,
+main .category-container .posts .related-products-container a .post .image img,
+main .category-container .posts .related-products-container a .product .image img {
+  width: 100%;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+

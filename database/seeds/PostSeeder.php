@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
         for ($i = 0; $i < 15; $i++) {
             $post = new Post();
             $post->title = $faker->sentence();
-            $post->image = $faker->imageUrl(600, 400, 'posts');
+            $post->image = $faker->image(storage_path('app/public/placeholders') , 600, 400, null , false );
             $post->body = $faker->realTextBetween($minNbChars = 300, $maxNbChars = 1000, $indexSize = 2);
             $post->save();
         }

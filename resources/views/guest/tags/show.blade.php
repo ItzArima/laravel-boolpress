@@ -6,9 +6,13 @@
 @section('content')
 <main>
     <div class="category-container">
-        <h1>{{$tag->name}}</h1>
+        <div class="title">
+            <h1>{{$tag->name}}</h1>
+        </div>
         <div class="posts">
-            <h1>Related Posts</h1>
+            <div class="title">
+                <h1>Related Posts</h1>
+            </div>
             <div class="related-posts-container">
                 @if(count($posts) != 0)
                     @foreach($posts as $post)
@@ -16,7 +20,7 @@
                             <div class="post">
                                 <h1>{{$post->title}}</h1>
                                 <div class="image">
-                                    <img src="{{$post->image}}" alt="">
+                                    <img src="{{asset('storage/' . $post->image)}}" alt="">
                                 </div>
                                 <div class="date">
                                     <p>{{date('F d Y' , strtotime($post->created_at))}}</p>
