@@ -14,18 +14,21 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <script src="{{asset('js/app.js')}}" defer></script>
         @yield('CSS')
     </head>
     <body>
-        <div class="loading">
-            <h1>Page is currently loading</h1>
-        </div>
-        <div class="ready hide">
-            @include('partials.header')
-            
-            @yield('content')
+        <div id="app">
+            <div class="loading">
+                <h1>Page is currently loading</h1>
+            </div>
+            <div class="ready hide">
+                @include('partials.header')
+                
+                @yield('content')
 
-            @include('partials.footer')
+                @include('partials.footer')
+            </div>
         </div>
 
         <script>
@@ -44,6 +47,21 @@
             else{
                 document.querySelector('.loading').classList.add('hide');
                 document.querySelector('.ready').classList.remove('hide');
+            }
+            let element = document.getElementById('navbarDropdown');
+            let chevron = document.querySelector('.fa-chevron-down');
+            let dropdown = document.querySelector('.dropdown');
+            if(element != null){
+                element.addEventListener('click' , function(){
+                    if(dropdown.classList.contains('display')){
+                        dropdown.classList.remove('display');
+                        chevron.classList.remove('rotate');
+                    }
+                    else{
+                        dropdown.classList.add('display');
+                        chevron.classList.add('rotate');
+                    }
+                })
             }
         </script>
     </body>

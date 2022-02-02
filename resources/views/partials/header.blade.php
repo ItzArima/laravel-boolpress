@@ -48,20 +48,3 @@
     </div>
 </header>
 
-<script>
-    let element = document.getElementById('navbarDropdown');
-    let chevron = document.querySelector('.fa-chevron-down');
-    let dropdown = document.querySelector('.dropdown');
-    if(element != null){
-        element.addEventListener('click' , function(){
-            if(dropdown.classList.contains('display')){
-                dropdown.classList.remove('display');
-                chevron.classList.remove('rotate');
-            }
-            else{
-                dropdown.classList.add('display');
-                chevron.classList.add('rotate');
-            }
-        })
-    }
-</script>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\PostResource;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', 'PageController@home')->name('home');
+
+Route::get('/contacts', 'PageController@contacts')->name('contacts');
+
+Route::post('/contacts/send' , 'PageController@sendMail')->name('contacts.send');
 
 Auth::routes();
 
@@ -41,3 +47,11 @@ Route::resource('/tags', TagController::class)->only([
 Route::resource('/categories', CategoryController::class)->only([
     'index','show'
 ]);
+
+/* Route::get('posts/get/{post}' , function(Post $post){
+    return new PostResource(Post::all());
+}); */
+
+Route::get('test' , function(){
+    return view('guest.api.posts');
+});

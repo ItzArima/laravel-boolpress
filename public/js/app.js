@@ -49773,6 +49773,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    Axios = _require["default"];
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49794,7 +49797,20 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    posts: null
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    Axios.get('api/get/posts').then(function (resp) {
+      console.log(resp.data.response);
+      _this.posts = resp.data.response;
+    })["catch"](function (e) {
+      console.log('Sorry' + e);
+    });
+  }
 });
 
 /***/ }),
@@ -49946,6 +49962,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/contacts.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/contacts.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/home.scss":
 /*!**********************************!*\
   !*** ./resources/sass/home.scss ***!
@@ -49980,9 +50007,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ./resources/sass/products.scss ./resources/sass/posts.scss ./resources/sass/categories.scss ./resources/sass/home.scss ***!
-  \***************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ./resources/sass/products.scss ./resources/sass/posts.scss ./resources/sass/contacts.scss ./resources/sass/categories.scss ./resources/sass/home.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49991,6 +50018,7 @@ __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\auth.scss */"./resources/sass/auth.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\products.scss */"./resources/sass/products.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\posts.scss */"./resources/sass/posts.scss");
+__webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\contacts.scss */"./resources/sass/contacts.scss");
 __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\categories.scss */"./resources/sass/categories.scss");
 module.exports = __webpack_require__(/*! C:\Users\Ros\Desktop\boolean\laravel-boolpress\resources\sass\home.scss */"./resources/sass/home.scss");
 

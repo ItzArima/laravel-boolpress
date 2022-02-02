@@ -12,5 +12,9 @@ return [
     [
         'name' => 'BLOG',
         'href' => 'posts.index',
+    ],
+    [
+        'name' => 'CONTACTS',
+        'href' => 'contacts',
     ]
 ];
